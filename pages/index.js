@@ -1,8 +1,13 @@
+/* 페이지가 갖는 header를 의미하는 컴포넌트 */
 import Head from 'next/head'
+/* 페이지가 갖는 img를 의미하는 컴포넌트 */
 import Image from 'next/image'
+/* 폰트의 규칙 등을 의미하는 Inter 컴포넌트 */
 import { Inter } from '@next/font/google'
+/* Home.module.css 자체를 styles라고 가르키고 있다. */
 import styles from '../styles/Home.module.css'
 
+/* Inter 컴포넌트에서 미리 지정된 키와 값을 주기 */
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -14,6 +19,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* className은 동일하게 쓰되, css 자체를 styles라고 정의했으므로
+      styles.main은 .main을 가리키는 것과 같다. */}
       <main className={styles.main}>
         <div className={styles.description}>
           <p>
@@ -27,6 +34,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               By{' '}
+              {/* 이쪽은 img src와 유사하게 움직이고 있다. */}
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
@@ -66,6 +74,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
+            {/* inter 객체와 className을 같이 다뤄주고 있다. */}
             <h2 className={inter.className}>
               Docs <span>-&gt;</span>
             </h2>
